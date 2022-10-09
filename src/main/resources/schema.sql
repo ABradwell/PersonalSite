@@ -1,0 +1,26 @@
+
+DROP TABLE IF EXISTS EMPLOYMENT;
+CREATE TABLE EMPLOYMENT (
+  employment_id INT AUTO_INCREMENT PRIMARY KEY,
+  company_name VARCHAR NOT NULL,
+  job_description VARCHAR,
+  location VARCHAR,
+  start_date DATE,
+  end_date DATE,
+  image_src VARCHAR,
+);
+
+DROP TABLE IF EXISTS TAG;
+CREATE TABLE TAG (
+    tag_id INT AUTO_INCREMENT PRIMARY KEY,
+    tag_value VARCHAR
+);
+
+DROP TABLE IF EXISTS EMPLOYMENT_TAG;
+CREATE TABLE EMPLOYMENT_TAG (
+    employment_tag_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    tag_id INT,
+    employment_id INT
+)
+
