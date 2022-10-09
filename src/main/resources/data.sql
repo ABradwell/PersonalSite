@@ -1,4 +1,6 @@
 
 
-INSERT INTO TAG(tag_value) VALUES
-('test');
+INSERT INTO CONTENT_TYPE(content_type_value) VALUES
+('ARTICLE'), ('PROJECT'), ('EMPLOYMENT');
+
+

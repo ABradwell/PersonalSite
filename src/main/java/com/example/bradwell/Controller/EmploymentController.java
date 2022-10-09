@@ -5,6 +5,7 @@ import com.example.bradwell.Models.Blurb;
 import com.example.bradwell.Models.Employment;
 import com.example.bradwell.Services.BlurbService;
 import com.example.bradwell.Services.Employment_Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,10 @@ import java.util.List;
 
 @Controller
 public class EmploymentController {
-
+    @Autowired
     private BlurbService blurbService;
 
+    @Autowired
     private Employment_Service employmentService;
 
     @GetMapping("/getEmploymentCarousel")
