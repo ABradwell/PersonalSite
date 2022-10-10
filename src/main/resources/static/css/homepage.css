@@ -1,11 +1,4 @@
 
-body {
-	background: linear-gradient(-45deg, #fc00ff, #00dbde);
-	background-size: 400% 400%;
-	-webkit-animation: gradient 60s ease infinite;
-    animation: gradient 45s ease-in-out infinite;
-	height: 100vh;
-}
 
 @-webkit-keyframes gradient {
 	0% {
@@ -31,9 +24,11 @@ body {
 	}
 }
 
-#main_content {
-    max-width: 1500px;
-    min-height: 950px;
+#splash_header {
+	background: linear-gradient(-45deg, #fc00ff, #00dbde);
+	background-size: 400% 400%;
+	-webkit-animation: gradient 60s ease infinite;
+    animation: gradient 45s ease-in-out infinite;
 }
 
 

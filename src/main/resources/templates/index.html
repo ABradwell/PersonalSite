@@ -11,22 +11,33 @@
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/carousel.css">
 </head>
-<body class="text-white">
-<!--    <div id="header"></div>-->
-    <section id="main_content" class="content px-2 px-md-4 px-lg-5 mx-2 mx-md-4 mx-lg-5">
-        <div id="splash_title" class="text-white">
-            <div id="name_wrapper" class="pt-5 mt-5">
-                <h1 id="splash_name" class="fw-bolder text-white m-0">Aiden<br><span style="font-size:100px">Stevenson</span><br>Bradwell</h1><br>
+<body class="text-white p-0 m-0">
+    <section id="splash_header" class="content">
+        <div class="px-3 px-md-4 px-lg-5 mb-5">
+            <div id="splash_title" class="text-white px-3 px-md-4 px-lg-5">
+                <div id="name_wrapper" class="pt-5">
+                    <h1 id="splash_name" class="fw-bolder text-white m-0">Aiden<br><span style="font-size:100px">Stevenson</span><br>Bradwell</h1><br>
+                </div>
+                <div id="title_wrapper" class="mt-4"><h3><span class="element"></span></h3></div>
             </div>
-            <div id="title_wrapper"><h3 class="element"></h3></div>
         </div>
+        <div class="mt-5">
+            <nav class="navbar sticky-top">
+                <div id="button_float" class="d-flex justify-content-between mt-5 pb-3 mx-auto" style="max-width:800px">
+                    <div id="first-btn"><div class="btn btn-lg btn-outline-light fw-light">Projects</div></div>
+                    <div id="second-btn"><div class="btn btn-lg btn-outline-light fw-light ms-5">Work Experience</div></div>
+                    <div id="third-btn"><div class="btn btn-lg btn-outline-light fw-light ms-5">Resume/About me</div></div>
+                    <div id="fourth-btn"><div class="btn btn-lg btn-outline-light fw-light ms-5">Articles</div></div>
+                </div>
+            </nav>
+        </div>
+        <section class="shadow-lg" style="min-height:2000px; background-color: rgba(255, 255, 255, 0.7);">
+        </section>
     </section>
-
-    <div id="footer"></div>
 </body>
-
-
 <script src="js/type_script.js" defer></script>
+<script src="js/button_float.js" defer></script>
+
 <script>
     $(function() {
         $("#header").load("components/reduced_header.html");
