@@ -1,11 +1,12 @@
 package com.example.bradwell.Models;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-@Table
+@Entity
 public class Employment {
 
     @Id

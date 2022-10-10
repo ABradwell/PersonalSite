@@ -1,12 +1,12 @@
 package com.example.bradwell.Models;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table
+@Entity
 public class Content_Blurb {
-
 
     @Id
     @Column
