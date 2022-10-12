@@ -1,20 +1,19 @@
 package com.example.bradwell.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Date;
+import javax.persistence.*;
 
-@Entity
+@Table
 public class Employment {
 
     @Id
-    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer employment_id;
 
     @Column
     private String company_name;
+
+    @Column
+    private String position_title;
 
     @Column
     private String job_description;
@@ -23,10 +22,10 @@ public class Employment {
     private String location;
 
     @Column
-    private Date start_date;
+    private String start_date;
 
     @Column
-    private Date end_date;
+    private String end_date;
 
     @Column
     private String image_src;
@@ -35,8 +34,10 @@ public class Employment {
 
     }
 
-    public Employment(String company_name, String job_description, String location, Date start_date, Date end_date, String image_src) {
+    public Employment(Integer employment_id, String company_name, String position_title, String job_description, String location, String start_date, String end_date, String image_src) {
+        this.employment_id = employment_id;
         this.company_name = company_name;
+        this.position_title = position_title;
         this.job_description = job_description;
         this.location = location;
         this.start_date = start_date;
@@ -75,19 +76,19 @@ public class Employment {
         this.location = location;
     }
 
-    public Date getStart_date() {
+    public String getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(Date start_date) {
+    public void setStart_date(String start_date) {
         this.start_date = start_date;
     }
 
-    public Date getEnd_date() {
+    public String getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(Date end_date) {
+    public void setEnd_date(String end_date) {
         this.end_date = end_date;
     }
 
@@ -97,5 +98,13 @@ public class Employment {
 
     public void setImage_src(String image_src) {
         this.image_src = image_src;
+    }
+
+    public String getPosition_title() {
+        return position_title;
+    }
+
+    public void setPosition_title(String position_title) {
+        this.position_title = position_title;
     }
 }

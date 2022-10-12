@@ -26,7 +26,7 @@ public class Employment_Service {
         try {
             employments = jdbcTemplate.query(SQL_CMD, new EmploymentRowMapper());
         } catch (Exception e) {
-            System.out.println("No Work Experience in Database.");
+            System.out.println("No Work Experience in Database. (" + e.getMessage() + ")");
         }
         return employments;
     }

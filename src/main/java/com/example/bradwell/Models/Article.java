@@ -1,15 +1,12 @@
 package com.example.bradwell.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
+@Table
 public class Article {
 
     @Id
-    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer article_id;
     @Column
     private String article_title;

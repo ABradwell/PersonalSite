@@ -1,16 +1,13 @@
 package com.example.bradwell.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
+@Table
 public class Content_Type {
 
 
     @Id
-    @Column
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer content_type_id;
 
     @Column

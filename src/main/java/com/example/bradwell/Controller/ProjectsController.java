@@ -34,8 +34,9 @@ public class ProjectsController {
     @GetMapping("getProjectCarousel")
     private String getProjectCarousel(Model model) {
 
-        List<Project> past_employment = projectService.getAllProjects();
-        model.addAttribute("projects", past_employment);
+        List<Project> projects = projectService.getAllProjects();
+        model.addAttribute("projects", projects);
+        model.addAttribute("car_id", "project_carousel");
 
         return "carousel/projects_carousel";
     }

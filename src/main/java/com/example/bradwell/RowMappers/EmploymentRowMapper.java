@@ -14,10 +14,11 @@ public class EmploymentRowMapper implements RowMapper<Employment> {
         Employment position = new Employment();
         position.setCompany_name(rs.getString("company_name"));
         position.setJob_description(rs.getString("job_description"));
+        position.setPosition_title(rs.getString("position_title"));
         position.setLocation(rs.getString("location"));
-        position.setStart_date(rs.getDate("start_date"));
-        position.setEnd_date(rs.getDate("end_date"));
-        position.setImage_src(rs.getString("img_src"));
+        position.setStart_date(rs.getString("start_date"));
+        position.setEnd_date(rs.getString("end_date"));
+        position.setImage_src(rs.getString("image_src"));
 
         return position;
     }

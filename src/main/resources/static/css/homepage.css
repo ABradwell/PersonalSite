@@ -42,3 +42,14 @@
     line-height:0.8;
 }
 
+
+.homepage_content {
+    max-width:1500px;
+    min-height:600px;
+}
+
+
+.work_cube {
+    height: 300px;
+    width: 300px;
+}

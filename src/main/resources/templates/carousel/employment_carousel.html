@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:id="${car_id}" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div th:each="employment, employmentIterStat: ${past_employment}" class="carousel-item " data-bs-interval="10000">
+            <div class="d-flex" style="min-height:450px">
+                <div class="col-9 col-md-6 p-5" style="border-right: solid 1px;">
+                    <div>
+                        <h1 class="display-6" th:text="${employment.getCompany_name()}"></h1>
+                    </div>
+                    <div>
+                        <p th:text="${employment.getJob_description()}"></p>
+                    </div>
+                    <div>
+                        <a th:href="|/getEmploymentPopup?id=${employment.getEmployment_id()}|" role="button" class="btn btn-lg btn-outline-dark mt-5 w-100">View</a>
+                    </div>
+                </div>
+                <div class="col-3 col-md-6 m-0 p-0 d-flex justify-content-center align-items-center" style="overflow:hidden; clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%); height:450px">
+                    <img class="" style="min-width:100%;" th:src="@{/images/{ref}(ref=${employment.getImage_src()})}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="m-0 p-0 justify-content-start text-start">
+    <a class="col-2 mx-0 p-0 btn btn-dark" style="border-radius: 0 !important" role="button" th:attr="data-bs-target='#'+${car_id}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="col-2 mx-0 p-0 btn btn-dark" style="border-radius: 0 !important" role="button" th:attr="data-bs-target='#'+${car_id}" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+<div class="carousel-indicators col-12 d-none" style="bottom: -50px;">
+    <button th:each="proj, iterStat: ${projects}" type="button" th:attr="data-bs-target='#'+${car_id}"
+            th:data-bs-slide-to="${iterStat.index}" class=""></button>
+</div>
+
+</html>

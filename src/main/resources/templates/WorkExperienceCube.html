@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:each="employment, employmentStat: ${past_employment}"  class="work_cube bg-light shadow mx-3 my-4 border border-secondary border-1 p-1 d-flex align-items-start flex-column">
+    <div class="logo_wrapper w-100 text-center mb-auto mt-5">
+        <img class="company_logo mx-auto" style="max-height:120px;" th:src="@{/images/{ref}(ref=${employment.getImage_src()})}" th:alt="|Company logo for ${employment.getCompany_name()}|">
+    </div>
+    <br>
+    <div class="information_wrapper my-0 col-12 pb-5">
+        <div class="text-center justify-content-center">
+            <p class="fw-bold text-center my-0" th:text="${employment.getPosition_title()}"></p>
+            <p class="fw-light text-center my-0" th:text="${employment.getCompany_name()}"></p>
+            <p class="text-secondary text-center my-0"><span th:text="${employment.getStart_date()}"></span> - <span th:text="${employment.getEnd_date()}"></span></p>
+        </div>
+    </div>
+
+</div>

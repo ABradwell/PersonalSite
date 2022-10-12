@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <title>Aiden Stevenson Bradwell</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/carousel.css">
 </head>
 <body class="text-white p-0 m-0">
-    <section id="splash_header" class="content">
+<section id="splash_header" class="content mb-5">
+    <div id="splash_wrapper" class=" mx-auto" style="max-width:1500px;">
         <div class="px-3 px-md-4 px-lg-5 mb-5">
             <div id="splash_title" class="text-white px-3 px-md-4 px-lg-5">
                 <div id="name_wrapper" class="pt-5">
-                    <h1 id="splash_name" class="fw-bolder text-white m-0">Aiden<br><span style="font-size:100px">Stevenson</span><br>Bradwell</h1><br>
+                    <h1 id="splash_name" class="fw-bolder text-white m-0">Aiden<br><span style="font-size:100px">Stevenson</span><br>Bradwell
+                    </h1><br>
                 </div>
                 <div id="title_wrapper" class="mt-4"><h3><span class="element"></span></h3></div>
             </div>
@@ -24,17 +31,43 @@
         <div class="mt-5">
             <nav class="navbar sticky-top">
                 <div id="button_float" class="d-flex justify-content-between mt-5 pb-3 mx-auto" style="max-width:800px">
-                    <div id="first-btn"><div class="btn btn-lg btn-outline-light fw-light">Projects</div></div>
-                    <div id="second-btn"><div class="btn btn-lg btn-outline-light fw-light ms-5">Work Experience</div></div>
-                    <div id="third-btn"><div class="btn btn-lg btn-outline-light fw-light ms-5">Resume/About me</div></div>
-                    <div id="fourth-btn"><div class="btn btn-lg btn-outline-light fw-light ms-5">Articles</div></div>
+                    <div id="first-btn">
+                        <a class="btn btn-lg btn-outline-light fw-light" href="#projects_link">Projects</a>
+                    </div>
+                    <div id="second-btn">
+                        <a class="btn btn-lg btn-outline-light fw-light ms-5" href="#experience_link">Work Experience</a>
+                    </div>
+                    <div id="third-btn">
+                        <a class="btn btn-lg btn-outline-light fw-light ms-5" href="/projectsList">Resume/About me</a>
+                    </div>
+                    <div id="fourth-btn">
+                        <a class="btn btn-lg btn-outline-light fw-light ms-5" href="/articlesList">Articles</a>
+                    </div>
                 </div>
             </nav>
         </div>
-        <section class="shadow-lg" style="min-height:2000px; background-color: rgba(255, 255, 255, 0.7);">
-        </section>
-    </section>
+    </div>
+</section>
+<hr id="projects_link">
+<section class="projects homepage_content mx-auto text-dark mb-5 px-3 px-md-4 px-lg-5">
+    <div class="homepage_title text-primary"><h1>Highlighted Projects</h1></div>
+    <div id="projects_carousel_wrapper">
+
+    </div>
+</section>
+
+<hr id="experience_link">
+<section class="projects homepage_content mx-auto text-dark mb-5 px-3 px-md-4 px-lg-5">
+    <div class="homepage_title text-primary"><h1>Work Experience</h1></div>
+    <div>
+        <div id="previous_experience_wrapper" class="content d-flex align-items-stretch justify-content-center flex-wrap">
+        </div>
+    </div>
+</section>
 </body>
+<footer id="footer">
+
+</footer>
 <script src="js/type_script.js" defer></script>
 <script src="js/button_float.js" defer></script>
 
@@ -42,6 +75,29 @@
     $(function() {
         $("#header").load("components/reduced_header.html");
         $("#footer").load("components/footer.html");
+
+
+        var projects_carousel_request = new XMLHttpRequest();
+        projects_carousel_request.open("GET", "/getProjectCarousel", true);
+
+        projects_carousel_request.onload = function() {
+            $("#projects_carousel_wrapper").append(projects_carousel_request.responseText);
+            $("#project_carousel").find(".carousel-item")[0].classList.add("active");
+        }
+
+        projects_carousel_request.send();
+
+        var work_cubes_request = new XMLHttpRequest();
+        work_cubes_request.open("GET", "/getEmploymentCubes", true);
+
+        work_cubes_request.onload = function() {
+            $("#previous_experience_wrapper").append(work_cubes_request.responseText);
+            $("#work_carousel").find(".carousel-item")[0].classList.add("active");
+        }
+
+        work_cubes_request.send();
     });
+
+
 </script>
 </html>

@@ -30,10 +30,11 @@ DROP TABLE IF EXISTS EMPLOYMENT;
 CREATE TABLE EMPLOYMENT (
   employment_id INT AUTO_INCREMENT PRIMARY KEY,
   company_name VARCHAR NOT NULL,
+  position_title VARCHAR,
   job_description VARCHAR,
   location VARCHAR,
-  start_date DATE,
-  end_date DATE,
+  start_date VARCHAR,
+  end_date VARCHAR,
   image_src VARCHAR
 );
 

@@ -28,10 +28,19 @@ public class EmploymentController {
 
         List<Employment> past_employment = employmentService.getAllEmployment();
         model.addAttribute("past_employment", past_employment);
+        model.addAttribute("car_id", "work_carousel");
 
         return "carousel/employment_carousel";
     }
 
+    @GetMapping("/getEmploymentCubes")
+    public String getAllEmploymentCubes(Model model){
+
+        List<Employment> past_employment = employmentService.getAllEmployment();
+        model.addAttribute("past_employment", past_employment);
+
+        return "WorkExperienceCube";
+    }
 
     @GetMapping("getEmploymentPopup")
     public String getEmploymentPopupById (@RequestParam Integer id, Model model) {
