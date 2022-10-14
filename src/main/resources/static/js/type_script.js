@@ -7,14 +7,11 @@ $(function() {
       strings: ['PYTHON PROGRAMMER',
       'WEBSITE DEVELOPER',
       "MUSICIAN",
-      "IMAGE PROCESSING PROGRAMMER",
-      "COMPUTER VISION RESEARCHER",
+      "RESEARCHER",
       "FULL STACK COMPUTER SCIENTIST"],
       typeSpeed: 40,
       backSpeed: 40,
-//      shuffle: true,
       backDelay: 700,
-//      smartBackspace: true // Default value
 
     };
 

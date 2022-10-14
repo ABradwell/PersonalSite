@@ -18,14 +18,18 @@ public class Project {
     @Column
     private String project_image_str;
 
+    @Column
+    private Boolean highlighted;
+
     public Project() {
     }
 
-    public Project(Integer project_id, String project_name, String project_sub_title, String project_image_str) {
+    public Project(Integer project_id, String project_name, String project_sub_title, String project_image_str, Boolean highlighted) {
         this.project_id = project_id;
         this.project_name = project_name;
         this.project_sub_title = project_sub_title;
         this.project_image_str = project_image_str;
+        this.highlighted = highlighted;
     }
 
     public Integer getProject_id() {
@@ -58,5 +62,13 @@ public class Project {
 
     public void setProject_image_str(String project_image_str) {
         this.project_image_str = project_image_str;
+    }
+
+    public Boolean getHighlighted() {
+        return highlighted;
+    }
+
+    public void setHighlighted(Boolean highlighted) {
+        this.highlighted = highlighted;
     }
 }

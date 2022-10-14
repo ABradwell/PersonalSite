@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aiden Stevenson Bradwell</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/carousel.css">
+</head>
+
+<header id="header"></header>
+<body>
+<section id="splash_header" class="content mb-5" style="height:247px;">
+    <div class="mt-5">
+        <nav class="navbar sticky-top justify-content-end me-4" style="height:60px">
+            <div id="button_float" class="d-flex justify-content-end mt-5 pb-3" style="max-width:800px">
+                <div id="zeroth-btn-btn">
+                    <a class="btn btn-outline-light fw-light fw-bold" href="/">Home</a>
+                </div>
+                <div id="first-btn">
+                    <a class="btn btn-outline-light ms-5 fw-light" href="#projects_link">Projects</a>
+                </div>
+                <div id="second-btn">
+                    <a class="btn btn-outline-light fw-light ms-5" href="#experience_link">Work Experience</a>
+                </div>
+                <div id="third-btn">
+                    <a class="btn btn-outline-light fw-light ms-5" href="/Projects">Resume/About me</a>
+                </div>
+                <div id="fourth-btn">
+                    <a class="btn btn-outline-light fw-light ms-5" href="/Articles">Essays & Articles</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="splash_wrapper" class="mx-auto" style="max-width:1500px; height:75px">
+        <div class="px-3 px-md-4 px-lg-5 mb-5">
+            <div id="splash_title" class="text-white px-3 px-md-4 px-lg-5">
+                <div id="name_wrapper" class="pt-5">
+                    <h1 id="splash_name" class="fw-bolder text-white m-0 mt-auto">Articles</h1><br>
+                </div>
+                <div id="title_wrapper" class="mt-4"><h3><span class="element"></span></h3></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="splash_title">
+
+    </div>
+    <div class="container">
+        <div th:each="art, artStat: ${articles}" class="d-flex py-5">
+            <div class=" col-2 d-flex justify-content-center align-items-center">
+                <img class="company_logo mx-auto" style="width:75%" th:src="@{/images/{ref}(ref=${art.getArticle_image_str()})}" th:alt="|Image for ${art.getArticle_title()}|">
+<!--                <a th:href="${art.getArticle_Link()}" role="button" class="btn btn-outline-dark mt-4 mb-5">View</a>-->
+            </div>
+            <div class="w-100 col-md-8 col-lg-6">
+                <p class="fw-bold my-0" th:text="${art.getArticle_title()}"></p>
+                <p class="my-0" th:text="${art.getArticle_subtitle()}"></p>
+                <p class="text-secondary"><b>Related Tags:</b>
+                    <span th:each="tag, tagStat: ${tags}" th:text="${tag.getTag_value()}" class="tag badge rounded-pill bg-dark"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<footer id="footer" class="mt-5">
+
+</footer>
+
+<script>
+    $(function() {
+        $("#footer").load("components/footer.html");
+    });
+</script>

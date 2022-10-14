@@ -5,7 +5,7 @@ CREATE TABLE ARTICLE (
     article_id INT AUTO_INCREMENT PRIMARY KEY,
     article_title VARCHAR,
     article_subtitle VARCHAR,
-    article_content VARCHAR,
+    article_link VARCHAR,
     article_image_str VARCHAR
 );
 
@@ -23,7 +23,8 @@ CREATE TABLE PROJECT (
 
     project_name VARCHAR,
     project_sub_title VARCHAR,
-    project_image_str VARCHAR
+    project_image_str VARCHAR,
+    highlighted BOOlEAN
 );
 
 DROP TABLE IF EXISTS EMPLOYMENT;

@@ -2,43 +2,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
+
+
 <div th:id="${car_id}" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button th:each="art, artIterStat: ${articles}" th:if="${artIterStat.index == 1}" type="button" data-bs-target="|#${car_id}|" th:data-bs-slide-to="${artIterStat.index}" class="active" aria-current="true" th:aria-label="${art.getArticle_title()}"></button>
+        <button th:each="art, artIterStat: ${articles}" th:else="${artIterStat.index == 1}" type="button" data-bs-target="|#${car_id}|" th:data-bs-slide-to="${artIterStat.index}" th:aria-label="${art.getArticle_title()}"></button>
+    </div>
     <div class="carousel-inner">
-        <div th:each="hl, hlIterStat: ${highlights}" class="carousel-item " data-bs-interval="10000">
-            <div class="d-flex" style="min-height:450px">
-                <div class="col-3 col-md-6 m-0 p-0 d-flex justify-content-center align-items-center" style="overflow:hidden; clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%); height:450px">
-                    <img class="" style="min-width:100%; min-height:100%; flex-shrink:0;" th:src="@{/imgs/highlight/{ref}(ref=${hl.getHighlight_image_link()})}">
+        <div th:each="art, artIterStat: ${articles}" class="carousel-item text-center" data-bs-interval="10000">
+            <div class="d-flex  align-items-start flex-column" style="min-height:450px">
+                <div class="logo_wrapper text-center mb-auto mt-5 col-12">
+                    <img class="company_logo mx-auto" style="width:75%" th:src="@{/images/{ref}(ref=${art.getArticle_image_str()})}" th:alt="|Image for ${art.getArticle_title()}|">
                 </div>
-                <div class="col-9 col-md-6 p-5" style="border-right: solid 1px;">
-                    <div>
-                        <h1 class="display-6" th:text="${hl.getHighlight_title()}"></h1>
-                    </div>
-                    <div>
-                        <p th:text="${hl.getHighlight_text()}"></p>
-                    </div>
-                    <div>
-                        <a th:href="${hl.getLink_to_project_page()}" role="button"
-                           class="btn btn-lg btn-outline-dark mt-5 w-100"
-                           th:text="${hl.getSolutionName()}"></a>
+                <div class="information_wrapper my-0 col-8 mx-auto col-12 pt-4">
+                    <div class="text-center justify-content-center">
+                        <p class="fw-bold text-center my-0" th:text="${art.getArticle_title()}"></p>
+                        <p class="text-center my-0" th:text="${art.getArticle_subtitle()}"></p>
+                        <a th:href="${art.getArticle_Link()}" role="button" class="btn btn-outline-dark mt-4 mb-5">View</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="m-0 p-0 justify-content-end text-end">
-    <a class="col-2 mx-0 p-0 btn btn-dark" style="border-radius: 0 !important" role="button" th:attr="data-bs-target='#'+${car_id}" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" th:data-bs-target="|#${car_id}|" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
-    </a>
-    <a class="col-2 mx-0 p-0 btn btn-dark" style="border-radius: 0 !important" role="button" th:attr="data-bs-target='#'+${car_id}" data-bs-slide="next">
+    </button>
+    <button class="carousel-control-next" type="button" th:data-bs-target="|#${car_id}|" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-    </a>
+    </button>
 </div>
-<div class="carousel-indicators col-12 d-none" style="bottom: -50px;">
-    <button th:each="hl, iterStat: ${highlights}" type="button" th:attr="data-bs-target='#'+${car_id}"
-            th:data-bs-slide-to="${iterStat.index}" class=""></button>
-</div>
-
 </html>
