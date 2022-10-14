@@ -17,6 +17,7 @@ public class ProjectRowMapper implements RowMapper<Project> {
         project.setProject_name(rs.getString("project_name"));
         project.setProject_image_str(rs.getString("project_image_str"));
         project.setProject_sub_title(rs.getString("project_sub_title"));
+        project.setHighlighted(rs.getBoolean("highlighted"));
         return project;
     }
 }

@@ -16,21 +16,22 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
 
-    @GetMapping("Article")
-    private String getArticlePage(@RequestParam Integer id, Model model){
+//    @GetMapping("Article")
+//    private String getArticlePage(@RequestParam Integer id, Model model){
+//
+//        Article article = articleService.getArticleById(id);
+//        model.addAttribute("article", article);
+//
+//        return "articlePage";
+//
+//    }
 
-        Article article = articleService.getArticleById(id);
-        model.addAttribute("article", article);
-
-        return "articlePage";
-
-    }
-
-    @GetMapping("")
+    @GetMapping("getArticleCarousel")
     private String getArticleCarousel(Model model) {
 
         List<Article> articles = articleService.getAllArticles();
         model.addAttribute("articles", articles);
+        model.addAttribute("car_id", "article_carousel");
         return "carousel/article_carousel";
     }
 

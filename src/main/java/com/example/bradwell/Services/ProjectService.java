@@ -16,6 +16,7 @@ public class ProjectService {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
     private BlurbService blurbService;
 
     public List<Project> getAllProjects(){
@@ -45,5 +46,18 @@ public class ProjectService {
 
     public List<Blurb> getProjectPageContentById(int id) {
         return blurbService.getAllBlurbsByTypeAndId("PROJECT", id);
+    }
+
+
+    public List<Project> getAllHighlightedProjects() {
+
+        String SQL_CMD = "SELECT * FROM project WHERE highlighted = TRUE";
+        List<Project> projects = null;
+        try {
+            projects = jdbcTemplate.query(SQL_CMD, new ProjectRowMapper());
+        } catch (Exception e) {
+            System.out.println("No Projects in Database.");
+        }
+        return projects;
     }
 }

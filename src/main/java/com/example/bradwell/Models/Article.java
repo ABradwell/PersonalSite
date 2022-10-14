@@ -13,18 +13,18 @@ public class Article {
     @Column
     private String article_subtitle;
     @Column
-    private String article_content;
+    private String article_link;
     @Column
     private String article_image_str;
 
     public Article() {
     }
 
-    public Article(Integer article_id, String article_title, String article_subtitle, String article_content, String article_image_str) {
+    public Article(Integer article_id, String article_title, String article_subtitle, String article_link, String article_image_str) {
         this.article_id = article_id;
         this.article_title = article_title;
         this.article_subtitle = article_subtitle;
-        this.article_content = article_content;
+        this.article_link = article_link;
         this.article_image_str = article_image_str;
     }
 
@@ -52,12 +52,12 @@ public class Article {
         this.article_subtitle = article_subtitle;
     }
 
-    public String getArticle_content() {
-        return article_content;
+    public String getArticle_Link() {
+        return article_link;
     }
 
-    public void setArticle_content(String article_content) {
-        this.article_content = article_content;
+    public void setArticle_Link(String article_link) {
+        this.article_link = article_link;
     }
 
     public String getArticle_image_str() {

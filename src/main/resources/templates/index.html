@@ -41,26 +41,34 @@
                         <a class="btn btn-lg btn-outline-light fw-light ms-5" href="/projectsList">Resume/About me</a>
                     </div>
                     <div id="fourth-btn">
-                        <a class="btn btn-lg btn-outline-light fw-light ms-5" href="/articlesList">Articles</a>
+                        <a class="btn btn-lg btn-outline-light fw-light ms-5" href="/Articles">Essays & Articles</a>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
 </section>
-<hr id="projects_link">
-<section class="projects homepage_content mx-auto text-dark mb-5 px-3 px-md-4 px-lg-5">
-    <div class="homepage_title text-primary"><h1>Highlighted Projects</h1></div>
+<hr id="projects_link" class="border border-dark border-1">
+<section class="projects homepage_content mx-auto text-dark my-5 px-3 px-md-4 px-lg-5">
+    <div class="homepage_title text-primary"><h3 class="ps-4">Highlighted Projects</h3></div>
     <div id="projects_carousel_wrapper">
 
     </div>
 </section>
-
-<hr id="experience_link">
-<section class="projects homepage_content mx-auto text-dark mb-5 px-3 px-md-4 px-lg-5">
-    <div class="homepage_title text-primary"><h1>Work Experience</h1></div>
+<hr id="experience_link" class="border border-dark border-1">
+<section class="projects homepage_content mx-auto text-dark my-5 px-3 px-md-4 px-lg-5">
+    <div class="homepage_title text-primary"><h3 class="ps-4">Work Experience</h3></div>
     <div>
         <div id="previous_experience_wrapper" class="content d-flex align-items-stretch justify-content-center flex-wrap">
+        </div>
+    </div>
+</section>
+
+<hr id="articles_link" class="border border-dark border-1">
+<section class="articles homepage_content mx-auto text-dark my-5 px-3 px-md-4 px-lg-5">
+    <div class="homepage_title text-primary"><h3 class="ps-4">Essays & Articles</h3></div>
+    <div>
+        <div id="articles_wrapper" class="content d-flex align-items-stretch justify-content-center flex-wrap">
         </div>
     </div>
 </section>
@@ -92,10 +100,20 @@
 
         work_cubes_request.onload = function() {
             $("#previous_experience_wrapper").append(work_cubes_request.responseText);
-            $("#work_carousel").find(".carousel-item")[0].classList.add("active");
         }
 
         work_cubes_request.send();
+
+
+        var articles_request = new XMLHttpRequest();
+        articles_request.open("GET", "/getArticleCarousel", true);
+        articles_request.onload = function() {
+            $("#articles_wrapper").append(articles_request.responseText);
+            $("#article_carousel").find(".carousel-item")[0].classList.add("active");
+        }
+
+        articles_request.send();
+
     });
 
 

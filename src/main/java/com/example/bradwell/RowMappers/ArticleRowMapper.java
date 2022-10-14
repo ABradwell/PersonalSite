@@ -16,7 +16,7 @@ public class ArticleRowMapper implements RowMapper<Article> {
         Article article = new Article();
 
         article.setArticle_id(rs.getInt("article_id"));
-        article.setArticle_content(rs.getString("article_content"));
+        article.setArticle_Link(rs.getString("article_link"));
         article.setArticle_title(rs.getString("article_title"));
         article.setArticle_subtitle(rs.getString("article_subtitle"));
         article.setArticle_image_str(rs.getString("article_image_str"));
