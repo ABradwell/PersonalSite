@@ -24,7 +24,7 @@ public class BlurbService {
         String SQL_CMD = String.format("SELECT * FROM blurb " +
                 "INNER JOIN content_blurb ON blurb.blurb_id = content_blurb.blurb_id " +
                 "INNER JOIN content_type ON content_type.content_type_id = content_blurb.content_type_id " +
-                "WHERE content_blurb.content_id = %d AND content_type.content_type_value = %s", id, type);
+                "WHERE content_blurb.content_id = %d AND content_type.content_type_value = '%s'", id, type);
 
         return jdbcTemplate.query(SQL_CMD, new BlurbRowMapper());
     }
