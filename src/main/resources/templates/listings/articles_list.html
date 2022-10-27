@@ -22,25 +22,28 @@
 <body>
 <section id="splash_header" class="content mb-5" style="height:247px;">
     <div class="mt-5">
-        <nav class="navbar sticky-top justify-content-end me-4" style="height:60px">
-            <div id="button_float" class="d-flex justify-content-end mt-5 pb-3" style="max-width:800px">
-                <div id="zeroth-btn-btn">
-                    <a class="btn btn-outline-light fw-light fw-bold" href="/">Home</a>
-                </div>
-                <div id="first-btn">
-                    <a class="btn btn-outline-light ms-5 fw-light" href="#projects_link">Projects</a>
-                </div>
-                <div id="second-btn">
-                    <a class="btn btn-outline-light fw-light ms-5" href="#experience_link">Work Experience</a>
-                </div>
-                <div id="third-btn">
-                    <a class="btn btn-outline-light fw-light ms-5" href="/Projects">Resume/About me</a>
-                </div>
-                <div id="fourth-btn">
-                    <a class="btn btn-outline-light fw-light ms-5" href="/Articles">Essays & Articles</a>
-                </div>
-            </div>
-        </nav>
+        <div id="button_nav">
+
+        </div>
+<!--        <nav class="navbar sticky-top justify-content-end me-4" style="height:60px">-->
+<!--            <div id="button_float" class="d-flex justify-content-end mt-5 pb-3" style="max-width:800px">-->
+<!--                <div id="zeroth-btn">-->
+<!--                    <a class="btn btn-outline-light fw-light fw-bold" href="/">Home</a>-->
+<!--                </div>-->
+<!--                <div id="first-btn">-->
+<!--                    <a class="btn btn-outline-light ms-5 fw-light" href="#projects_link">Projects</a>-->
+<!--                </div>-->
+<!--                <div id="second-btn">-->
+<!--                    <a class="btn btn-outline-light fw-light ms-5" href="#experience_link">Work Experience</a>-->
+<!--                </div>-->
+<!--                <div id="third-btn">-->
+<!--                    <a class="btn btn-outline-light fw-light ms-5" href="/Projects">Resume/About me</a>-->
+<!--                </div>-->
+<!--                <div id="fourth-btn">-->
+<!--                    <a class="btn btn-outline-light fw-light ms-5" href="/Articles">Essays & Articles</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
     </div>
     <div id="splash_wrapper" class="mx-auto" style="max-width:1500px; height:75px">
         <div class="px-3 px-md-4 px-lg-5 mb-5">
@@ -80,6 +83,7 @@
 
 <script>
     $(function() {
+        $("#button_nav").load("components/reduced_header.html");
         $("#footer").load("components/footer.html");
     });
 </script>
