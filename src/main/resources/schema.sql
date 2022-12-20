@@ -71,7 +71,14 @@ CREATE TABLE CONTENT_BLURB (
     FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
     blurb_id INT,
     FOREIGN KEY (blurb_id) REFERENCES BLURB(blurb_id),
-    content_id INT
-
+    content_id INT,
+    content_type_id INT,
+    FOREIGN KEY (content_type_id) REFERENCES CONTENT_BLURB_TYPE(content_type_id)
 );
 
+DROP TABLE IF EXISTS BLURB_TYPE;
+CREATE TABLE BLURB_TYPE (
+    content_blurb_type_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    type_value VARCHAR
+);

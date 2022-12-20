@@ -64,9 +64,8 @@
         <div th:each="art, artStat: ${articles}" class="d-flex py-5">
             <div class=" col-2 d-flex justify-content-center align-items-center">
                 <img class="company_logo mx-auto" style="width:75%" th:src="@{/images/{ref}(ref=${art.getArticle_image_str()})}" th:alt="|Image for ${art.getArticle_title()}|">
-<!--                <a th:href="${art.getArticle_Link()}" role="button" class="btn btn-outline-dark mt-4 mb-5">View</a>-->
             </div>
-            <div class="w-100 col-md-8 col-lg-6">
+            <div class="ps-5 col-md-8 col-lg-6">
                 <p class="fw-bold my-0" th:text="${art.getArticle_title()}"></p>
                 <p class="my-0" th:text="${art.getArticle_subtitle()}"></p>
                 <p class="text-secondary"><b>Related Tags:</b>

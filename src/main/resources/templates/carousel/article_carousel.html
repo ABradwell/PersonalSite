@@ -13,13 +13,13 @@
         <div th:each="art, artIterStat: ${articles}" class="carousel-item text-center" data-bs-interval="10000">
             <div class="d-flex  align-items-start flex-column" style="min-height:450px">
                 <div class="logo_wrapper text-center mb-auto mt-5 col-12">
-                    <img class="company_logo mx-auto" style="width:75%" th:src="@{/images/{ref}(ref=${art.getArticle_image_str()})}" th:alt="|Image for ${art.getArticle_title()}|">
+                    <img class="company_logo mx-auto" style="width:75%; max-width:600px;" th:src="@{/images/{ref}(ref=${art.getArticle_image_str()})}" th:alt="|Image for ${art.getArticle_title()}|">
                 </div>
                 <div class="information_wrapper my-0 col-8 mx-auto col-12 pt-4">
                     <div class="text-center justify-content-center">
                         <p class="fw-bold text-center my-0" th:text="${art.getArticle_title()}"></p>
                         <p class="text-center my-0" th:text="${art.getArticle_subtitle()}"></p>
-                        <a th:href="${art.getArticle_Link()}" role="button" class="btn btn-outline-dark mt-4 mb-5">View</a>
+                        <a target="_blank" th:href="${art.getArticle_Link()}" role="button" class="btn btn-outline-dark mt-4 mb-5">View</a>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,8 @@
 package com.example.bradwell.Services;
 
-import com.example.bradwell.Models.Project;
 import com.example.bradwell.Models.Tag;
-import com.example.bradwell.RowMappers.ProjectRowMapper;
 import com.example.bradwell.RowMappers.TagRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.relational.core.sql.SQL;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 

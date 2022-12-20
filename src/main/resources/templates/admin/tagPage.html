@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Tag</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+          integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+
+<input id="content_id" type="text">
+<hr>
+<div  th:each="content_type, tagIter : ${content_types}" class="form-check  form-check-inline">
+    <input class="form-check-input content_type_check" type="checkbox" th:value="${content_type.getContent_type_id()}" th:id="|cont_${content_type.getContent_type_id()}|">
+    <label class="form-check-label" th:for="|cont_${content_type.getContent_type_id()}|" th:text="${content_type.getContent_type_value()}"> </label>
+</div>
+<hr>
+<div  th:each="tag, tagIter : ${tags}" class="form-check  form-check-inline">
+    <input class="form-check-input tag_check" type="checkbox" th:value="${tag.getTag_id()}" th:id="|${tag.getTag_id()}_${article.getArticle_id()}|">
+    <label class="form-check-label" th:for="|${tag.getTag_id()}_${article.getArticle_id()}|" th:text="${tag.getTag_value()}"> </label>
+</div>
+<a class="btn btn-lg">Show!</a>
+
+
+<div>
+    <span id="data_result"></span>
+</div>
+<script>
+    $({
+        $("#data_result").click(function () {
+
+            $("#data_result").text("INSERT INTO CONTENT_TAG(content_type_id, content_id, tag_id) VALUES \n")
+            var content_id = $("#content_id").val();
+            var content_type_id = $(".content_type_check").val();
+            $(".tag_check:checked").each( function () {
+                var new_line = "(" + content_type_id + "," + content_id + "," + this.val();
+                $("#data_result").append("")
+            });
+        });
+    });
+</script>
+<!--<h1 class="fw-bolder mt-5 text-center">Article Tag Selection</h1>-->
+<!--  <div th:each="article, articleInter : ${articles}" class="mb-4 ps-5">-->
+<!--    <h2 class="text-bolder" th:text="${article.getArticle_title()}"></h2>-->
+<!--    <span class="article_id d-none" th:text="${article.getArticle_id()}"></span>-->
+<!--    <div class="d-flex">-->
+<!--        <div class="d-flex g-3">-->
+<!--            <form th:id="|article_form_${article.getArticle_id()}|" action="|/update_article?id=${article.getArticle_id()}|" method="get" class="article_form">-->
+<!--                <div  th:each="tag, tagIter : ${tags}" class="form-check  form-check-inline">-->
+<!--                    <input class="form-check-input" type="checkbox" th:value="${tag.getTag_id()}" th:id="|${tag.getTag_id()}_${article.getArticle_id()}|">-->
+<!--                    <label class="form-check-label" th:for="|${tag.getTag_id()}_${article.getArticle_id()}|" th:text="${tag.getTag_value()}"> </label>-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <input type="submit" name="submit" value="UPDATE" />-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--    <a class="article_update_button btn btn-outline-dark">UPDATE</a>-->
+<!--    <hr>-->
+<!--  </div>-->
+
+<!--<h1 class="fw-bolder mt-5 text-center">Project Tag Selection</h1>-->
+<!--<div th:each="project, projectIter : ${projects}" class="mb-4 ps-5">-->
+<!--    <h2 class="text-bolder" th:text="${project.getProject_name()}"></h2>-->
+<!--    <span class="project_id d-none" th:text="${project.getProject_id()}"></span>-->
+<!--    <div class="">-->
+<!--        <ul class="">-->
+<!--            <li  th:each="tag, tagIter : ${tags}" class="form-check ps-2">-->
+<!--                <input class="form-check-input" type="checkbox" th:value="${tag.getTag_value()}" th:id="|${tag.getTag_id()}_${project.getProject_id()}|">-->
+<!--                <label class="form-check-label" th:for="|${tag.getTag_id()}_${project.getProject_id()}|" th:text="${tag.getTag_value()}"> </label>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--    <a class="project_update_button btn btn-outline-dark">UPDATE</a>-->
+<!--    <hr>-->
+<!--</div>-->
+</body>
+
+<script>
+
+</script>
+
+</html>

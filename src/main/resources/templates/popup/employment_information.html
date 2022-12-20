@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div class="d-flex">
+    <div id="title_and_header" class="col-12 d-flex">
+        <div id="logo" class="col-4">
+            <img class="d-block" style="width:100%"
+                 th:src="@{/images/{ref}(ref=${employment.getImage_src()})}"
+                 th:alt="|Company logo for ${employment.getCompany_name()}|">
+        </div>
+        <div id="titles" class="col-8">
+            <h1 id="position_title" th:text="${employment.getPosition_title()}"></h1>
+            <h2 id="company_name" th:text="${employment.getCompany_name()}"></h2>
+            <h3 id="time_range" th:text="${employment.getPosition_title()}"><span th:text="${employment.getStart_date()}"></span> - <span th:text="${employment.getEnd_date()}"></span></h3>
+        </div>
+    </div>
+    <hr>
+    <div id="job_description" class="col-12" th:text="${employment.getJob_description()}"></div>
+    <hr>
+    <div id="tag_list" class="col-12"></div>
+</div>

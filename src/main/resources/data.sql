@@ -8,12 +8,12 @@ INSERT INTO TAG(tag_value) VALUES
 
 
 INSERT INTO EMPLOYMENT(company_name, position_title, job_description, location, start_date, end_date, image_src) VALUES
-    ('Government of Canada, Department of Fisheries and Oceans', 'Website Development Project Lead', 'TBD', 'Ottawa, Ontario, Canada', 'May 2022', 'August 2022', 'work_logos/canada-logo.png'),
-    ('Microchip Semiconductor Inc.', 'Embedded Software Developer (CO-OP Position)', 'TBD', 'Kanata, Ontario, Canada', 'January 2021', 'August 2021', 'work_logos/microchip-round-logo.png'),
-    ('National Research Council', 'Computer Vision Student Researcher (CO-OP Position)', 'TBD', 'Ottawa, Ontario, Canada', 'May 2020', 'August 2020', 'work_logos/nrc-logo.png'),
-    ('Discover Year', 'Website Management', 'TBD', 'Ottawa, Ontario, Canada (VIRTUAL)', 'May 2021', 'Present', 'work_logos/discover-year-logo-2.png'),
-    ('MentorU', 'Website Management', 'TBD', 'Ottawa, Ontario, Canada (VIRTUAL)', 'March 2020', 'Present', 'work_logos/mentor-u-logo-2.png'),
-    ('University of Ottawa', 'Regional Mentor', 'TBD', 'Ottawa, Ontario, Canada', 'May 2019', 'April 2020', 'work_logos/uottawa-logo.png');
+    ('Government of Canada, Department of Fisheries and Oceans', 'Website Development Project Lead', 'Oversaw internal-facing shared-development platform for department members to share their projects. Used SQL, Spring Boot, Java, JavaScript, CSS, HTML5, Azure Devops', 'Ottawa, Ontario, Canada', 'May 2022', 'August 2022', 'work_logos/canada-logo.png'),
+    ('Microchip Semiconductor Inc.', 'Embedded Software Developer (CO-OP Position)', 'Redesigned and implemented testing platform for integrating timing microchips. Used TCL, Python, PyVisa, GPIB, Embedded Engineering Bits, Robot Framework', 'Kanata, Ontario, Canada', 'January 2021', 'August 2021', 'work_logos/microchip-round-logo.png'),
+    ('National Research Council', 'Computer Vision Student Researcher (CO-OP Position)', 'Experimented with eye-tracking using a RGB webcam to detect early signs of Alzheimer’s Disease Used Java, Python, PyGaze, PyGame, Tensorflow', 'Ottawa, Ontario, Canada', 'May 2020', 'August 2020', 'work_logos/nrc-logo.png'),
+    ('Discover Year', 'Website Management', 'Manage website design, updates, and development for a young upstart in the Ottawa area. Used HTML5, CSS, JavaScript', 'Ottawa, Ontario, Canada (VIRTUAL)', 'May 2021', 'Present', 'work_logos/discover-year-logo-2.png'),
+    ('MentorU', 'Website Management', 'Manage website design, updates, and development for a young upstart in the Ottawa area. Used HTML5, CSS, JavaScript', 'Ottawa, Ontario, Canada (VIRTUAL)', 'March 2020', 'Present', 'work_logos/mentor-u-logo-2.png'),
+    ('University of Ottawa', 'Regional Mentor', 'Assisted first-year students with their transition into the University of Ottawa community.Abilities Gained:</b> Public speaking, Presentation Development, Interdepartmental Relations', 'Ottawa, Ontario, Canada', 'May 2019', 'April 2020', 'work_logos/uottawa-logo.png');
 
 INSERT INTO CONTENT_TAG(content_type_id, content_id, tag_id) VALUES
     (1, 1, 1), (1, 1, 1), (1, 1, 1), (1, 1, 1), (1, 1, 1), (1, 1, 1), (1, 1, 1),
@@ -53,12 +53,12 @@ INSERT INTO CONTENT_TAG(content_type_id, content_id, tag_id) VALUES
     (2, 8, 1), (2, 8, 1), (2, 8, 1), (2, 8, 1), (2, 8, 1), (2, 8, 1), (2, 8, 1);
 
 INSERT INTO ARTICLE(article_title, article_subtitle, article_link, article_image_str) VALUES
-('Estimating and Analyzing Gaze Points Using RGB Laptop Webcams', 'End-term report from my 4 month placement with the National Research Council of Canada.', '', 'article_images/rgb.png'),
-('A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', '', 'article_images/suriname.png'),
-('Fears of Mother-Child Transmission Amongst HIV Positive Biological Women', 'A brief look at some of the pressures experienced by HIV positive women, with regards to childbirth and relationships.', '', 'article_images/hiv_mother.jpg'),
-('Research Proposal: Measuring Self-esteem & Self-doubt Through Emotionally Charged Digital Surveys', 'A detailed proposal for an undergraduate research paper, where multiple choice questions are used to measure a participants self-esteem.', '', 'article_images/report.png'),
-('The Dangers of Under-Trained and Overconfident Programmers', 'A warning piece on the direction of the computer science job market in the modern age.', '', 'article_images/undertrained.png'),
-('Object-Oriented Programming; The (Im)Perfect Layman’s Code', 'A warning on the abundant reliance of object-oriented code.', '', 'article_images/oop.png');
+('Estimating and Analyzing Gaze Points Using RGB Laptop Webcams', 'End-term report from my 4 month placement with the National Research Council of Canada.', 'articles/300064655_Summer_2020_Report.pdf', 'article_images/rgb.jpg'),
+('A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'articles/Dry_Sex_in_the_Afro_Surinamese_People.pdf', 'article_images/suriname.jpg'),
+('Fears of Mother-Child Transmission Amongst HIV Positive Biological Women', 'A brief look at some of the pressures experienced by HIV positive women, with regards to childbirth and relationships.', 'articles/Relational_Pressures_of_HIV_Positive_Women.pdf', 'article_images/hiv_mother.jpg'),
+('Research Proposal: Measuring Self-esteem & Self-doubt Through Emotionally Charged Digital Surveys', 'A detailed proposal for an undergraduate research paper, where multiple choice questions are used to measure a participants self-esteem.', 'articles/Research_Proposal_Doubt_And_Self_Esteem.pdf', 'article_images/report.jpg'),
+('The Dangers of Under-Trained and Overconfident Programmers', 'A warning piece on the direction of the computer science job market in the modern age.', 'https://www.linkedin.com/pulse/dangers-under-trained-over-confident-programmers-aiden-bradwell/', 'article_images/undertrained.jpg'),
+('Object-Oriented Programming; The (Im)Perfect Layman’s Code', 'A warning on the abundant reliance of object-oriented code.', 'https://www.linkedin.com/pulse/object-oriented-programming-imperfect-laymans-code-aiden-bradwell/', 'article_images/oop.jpg');
 
 INSERT INTO CONTENT_TAG(content_type_id, content_id, tag_id) VALUES
     (3, 1, 1), (3, 1, 1), (3, 1, 1), (3, 1, 1), (3, 1, 1), (3, 1, 1), (3, 1, 1),
@@ -67,3 +67,4 @@ INSERT INTO CONTENT_TAG(content_type_id, content_id, tag_id) VALUES
     (3, 4, 1), (3, 4, 1), (3, 4, 1), (3, 4, 1), (3, 4, 1), (3, 4, 1), (3, 4, 1),
     (3, 5, 1), (3, 5, 1), (3, 5, 1), (3, 5, 1), (3, 5, 1), (3, 5, 1), (3, 5, 1),
     (3, 6, 1), (3, 6, 1), (3, 6, 1), (3, 6, 1), (3, 6, 1), (3, 6, 1), (3, 6, 1);
+
