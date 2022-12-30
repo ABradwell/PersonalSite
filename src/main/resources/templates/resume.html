@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Aiden Stevenson Bradwell</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+          integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <link rel="stylesheet" href="css/homepage.css">
+  <link rel="stylesheet" href="css/color_background.css">
+  <link rel="stylesheet" href="css/carousel.css">
+</head>
+
+<header id="header"></header>
+<body  style="min-height:1000px">
+<div class="splash_title">
+
+</div>
+<section id="image_and_info" class="my-4">
+  <div class="d-none d-lg-flex w-100 px-4 ms-5">
+    <div class="col-12 col-lg-3 text-center" id="image">
+      <img class="border border-3 shadow" style="width:100%; height:400px;">
+    </div>
+    <div class="col-12 col-lg-8 pe-5 ps-5 align-self-center" id="info">
+      <h3>About Me</h3>
+      <p>Hello! My name is Aiden Stevenson Bradwell, a graduate of the University of Ottawa with an Honours BSc dual Major in Computer Science, Major in Psychology. Landing in Reading, United Kingdom in March 2023 I am currently seeking employment in the field of Computer Science.
+        <br><br>
+        I have extensive experience in project conceptualization, scheduling, development oversight, and hands-on coding. My interests are in team leadership, environmental innovation, public speaking, and project development.
+        <br><br>
+        Through my personal life I am a pub-musician, who frequently partakes in Visual and Musical Arts. I have a strong inclination for self-betterment through reading and exercising.</p>
+    </div>
+  </div>
+  <div class="d-lg-none d-block w-100 px-4">
+    <div class="mx-auto text-center" id="image">
+      <img class="border border-3 shadow mt-3" style="width:400px; height:400px;">
+    </div>
+    <div class="px-5" id="info">
+      <h3>About Me</h3>
+      <p>Hello! My name is Aiden Stevenson Bradwell, a graduate of the University of Ottawa with an Honours BSc dual Major in Computer Science, Major in Psychology. Landing in Reading, United Kingdom in March 2023 I am currently seeking employment in the field of Computer Science.
+        <br><br>
+        I have extensive experience in project conceptualization, scheduling, development oversight, and hands-on coding. My interests are in team leadership, environmental innovation, public speaking, and project development.
+        <br><br>
+        Through my personal life I am a pub-musician, who frequently partakes in Visual and Musical Arts. I have a strong inclination for self-betterment through reading and exercising.</p>
+    </div>
+  </div>
+</section>
+<hr class="mb-0 pb-0">
+<section style="">
+  <div id="splash_background" class="h-100">
+    <div class="bg-white col-9 mx-auto h-100" style="min-height:1000px;">
+      <h3 class="resume_main_header"></h3>
+    </div>
+  </div>
+</section>
+</body>
+<footer id="footer"></footer>
+<script>
+    $(function() {
+<!--        $("#button_nav").load("components/reduced_header.html");-->
+        $("#header").load("components/navbar_header.html");
+        $("#footer").load("components/reduced_footer.html");
+    });
+</script>
+</html>

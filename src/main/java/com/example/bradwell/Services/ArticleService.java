@@ -30,6 +30,21 @@ public class ArticleService {
         return articles;
     }
 
+    public List<Article> getAllHighlightedArticles() {
+
+        String SQL_CMD = "SELECT * FROM article WHERE highlighted = TRUE";
+
+        List<Article> articles = null;
+        try {
+            articles = jdbcTemplate.query(SQL_CMD, new ArticleRowMapper());
+        } catch (Exception e) {
+            System.out.println("No Articles in Database.");
+        }
+
+        return articles;
+
+    }
+
     public Article getArticleById (int id) {
 
         String SQL_CMD = "SELECT * FROM article WHERE article_id = " + id;

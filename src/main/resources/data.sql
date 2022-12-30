@@ -159,12 +159,12 @@ INSERT INTO BLURB(title, blurb_content, blurb_type_id, project_id) VALUES
 1, 8);
 
 
-INSERT INTO ARTICLE(article_title, article_subtitle, article_link, article_image_str) VALUES
-('Estimating and Analyzing Gaze Points Using RGB Laptop Webcams', 'End-term report from my 4 month placement with the National Research Council of Canada.', 'articles/300064655_Summer_2020_Report.pdf', 'article_images/rgb.jpg'),
-('A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'articles/Dry_Sex_in_the_Afro_Surinamese_People.pdf', 'article_images/suriname.jpg'),
-('Fears of Mother-Child Transmission Amongst HIV Positive Biological Women', 'A brief look at some of the pressures experienced by HIV positive women, with regards to childbirth and relationships.', 'articles/Relational_Pressures_of_HIV_Positive_Women.pdf', 'article_images/hiv_mother.jpg'),
-('Research Proposal: Measuring Self-esteem & Self-doubt Through Emotionally Charged Digital Surveys', 'A detailed proposal for an undergraduate research paper, where multiple choice questions are used to measure a participants self-esteem.', 'articles/Research_Proposal_Doubt_And_Self_Esteem.pdf', 'article_images/report.jpg'),
-('The Dangers of Under-Trained and Overconfident Programmers', 'A warning piece on the direction of the computer science job market in the modern age.', 'https://www.linkedin.com/pulse/dangers-under-trained-over-confident-programmers-aiden-bradwell/', 'article_images/undertrained.jpg'),
-('Object-Oriented Programming; The (Im)Perfect Layman’s Code', 'A warning on the abundant reliance of object-oriented code.', 'https://www.linkedin.com/pulse/object-oriented-programming-imperfect-laymans-code-aiden-bradwell/', 'article_images/oop.jpg');
+INSERT INTO ARTICLE(article_title, article_subtitle, article_link, article_image_str, highlighted) VALUES
+('Estimating and Analyzing Gaze Points Using RGB Laptop Webcams', 'End-term report from my 4 month placement with the National Research Council of Canada.', 'articles/300064655_Summer_2020_Report.pdf', 'article_images/rgb.jpg', TRUE),
+('A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'A Cross Cultural Analysis of Dry Sex in the Afro-Surinamese', 'articles/Dry_Sex_in_the_Afro_Surinamese_People.pdf', 'article_images/suriname.jpg', TRUE),
+('Fears of Mother-Child Transmission Amongst HIV Positive Biological Women', 'A brief look at some of the pressures experienced by HIV positive women, with regards to childbirth and relationships.', 'articles/Relational_Pressures_of_HIV_Positive_Women.pdf', 'article_images/hiv_mother.jpg', FALSE),
+('Research Proposal: Measuring Self-esteem & Self-doubt Through Emotionally Charged Digital Surveys', 'A detailed proposal for an undergraduate research paper, where multiple choice questions are used to measure a participants self-esteem.', 'articles/Research_Proposal_Doubt_And_Self_Esteem.pdf', 'article_images/report.jpg', FALSE),
+('The Dangers of Under-Trained and Overconfident Programmers', 'A warning piece on the direction of the computer science job market in the modern age.', 'https://www.linkedin.com/pulse/dangers-under-trained-over-confident-programmers-aiden-bradwell/', 'article_images/undertrained.jpg', TRUE),
+('Object-Oriented Programming; The (Im)Perfect Layman’s Code', 'A warning on the abundant reliance of object-oriented code.', 'https://www.linkedin.com/pulse/object-oriented-programming-imperfect-laymans-code-aiden-bradwell/', 'article_images/oop.jpg', FALSE);
 
 

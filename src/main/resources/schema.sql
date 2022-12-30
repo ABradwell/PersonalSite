@@ -19,7 +19,8 @@ CREATE TABLE ARTICLE (
     article_title VARCHAR,
     article_subtitle VARCHAR,
     article_link VARCHAR,
-    article_image_str VARCHAR
+    article_image_str VARCHAR,
+    highlighted BOOLEAN
 );
 
 

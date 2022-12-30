@@ -40,23 +40,19 @@ public class MainController {
 
     @GetMapping("/tagEditor")
     public String getTagPage(Model model) {
-
-//        List<Article> articles = articleService.getAllArticles();
         List<Tag> tags = tagService.getAllTags();
         List<Content_Type> content_types= miscService.getAllContentType();
-//        List<Project> projects = projectService.getAllProjects();
 
         model.addAttribute("content_types", content_types);
         model.addAttribute("tags", tags);
-//        model.addAttribute("projects", projects);
 
         return "admin/tagPage";
     }
-//
-//    @GetMapping("/update_article")
-//    public String updateArticleTags(Model model) {
-//
-//
-//        return "admin/tagPage";
-//    }
+
+    @GetMapping("/Resume")
+    public String getResumePage(Model model) {
+
+        return "resume";
+    }
+
 }

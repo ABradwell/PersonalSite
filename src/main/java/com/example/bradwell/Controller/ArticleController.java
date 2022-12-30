@@ -29,11 +29,13 @@ public class ArticleController {
     @GetMapping("getArticleCarousel")
     private String getArticleCarousel(Model model) {
 
-        List<Article> articles = articleService.getAllArticles();
+        List<Article> articles = articleService.getAllHighlightedArticles();
         model.addAttribute("articles", articles);
         model.addAttribute("car_id", "article_carousel");
         return "carousel/article_carousel";
     }
+
+
 
 
 }
