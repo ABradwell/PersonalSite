@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:if="${#lists.size(screenshots) > 0}" th:id="${car_id}" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div th:each="img, imgStat: ${screenshots}" class="carousel-item" data-bs-interval="10000">
+            <div class="d-flex justify-content-center">
+                <img th:src="@{/images/screenshots/{ref}(ref=${img})}" class="mw-100" style="max-height:450px" alt="Screenshot For Current Project">
+            </div>
+        </div>
+    </div>
+    <button th:unless="${#lists.size(screenshots) == 1}" class="carousel-control-prev" type="button" th:data-bs-target="|#${car_id}|" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button th:unless="${#lists.size(screenshots) == 1}" class="carousel-control-next" type="button" th:data-bs-target="|#${car_id}|" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

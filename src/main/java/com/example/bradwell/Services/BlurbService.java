@@ -19,12 +19,11 @@ public class BlurbService {
     JdbcTemplate jdbcTemplate;
 
 
-    public List<Blurb> getAllBlurbsByTypeAndId(String type, Integer id) {
+    public List<Blurb> getAllBlurbsByProjectId(Integer project_id) {
 
         String SQL_CMD = String.format("SELECT * FROM blurb " +
-                "INNER JOIN content_blurb ON blurb.blurb_id = content_blurb.blurb_id " +
-                "INNER JOIN content_type ON content_type.content_type_id = content_blurb.content_type_id " +
-                "WHERE content_blurb.content_id = %d AND content_type.content_type_value = '%s'", id, type);
+                "INNER JOIN blurb_type ON blurb_type.blurb_type_id = blurb.blurb_type_id " +
+                "WHERE project_id = %d", project_id);
 
         return jdbcTemplate.query(SQL_CMD, new BlurbRowMapper());
     }

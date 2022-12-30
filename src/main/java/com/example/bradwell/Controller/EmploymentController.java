@@ -42,17 +42,17 @@ public class EmploymentController {
         return "WorkExperienceCube";
     }
 
-    @GetMapping("getEmploymentPopup")
-    public String getEmploymentPopupById (@RequestParam Integer id, Model model) {
-
-        Employment employment_obj = employmentService.getEmploymentById(id);
-        List<Blurb> employment_content = blurbService.getAllBlurbsByTypeAndId("EMPLOYMENT", employment_obj.getEmployment_id());
-
-        model.addAttribute("employment", employment_obj);
-        model.addAttribute("employment_content", employment_content);
-
-        return "popup/employment_information";
-    }
+//    @GetMapping("getEmploymentPopup")
+//    public String getEmploymentPopupById (@RequestParam Integer id, Model model) {
+//
+//        Employment employment_obj = employmentService.getEmploymentById(id);
+////        List<Blurb> employment_content = blurbService.getAllBlurbsByProjectId(employment_obj.getEmployment_id());
+//
+//        model.addAttribute("employment", employment_obj);
+//        model.addAttribute("employment_content", employment_content);
+//
+//        return "popup/employment_information";
+//    }
 
 
 }

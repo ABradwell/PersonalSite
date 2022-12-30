@@ -20,57 +20,35 @@
 
 <header id="header"></header>
 <body>
-<section id="splash_header" class="content mb-5" style="height:247px;">
-    <div class="mt-5">
-        <div id="button_nav">
-
-        </div>
-<!--        <nav class="navbar sticky-top justify-content-end me-4" style="height:60px">-->
-<!--            <div id="button_float" class="d-flex justify-content-end mt-5 pb-3" style="max-width:800px">-->
-<!--                <div id="zeroth-btn">-->
-<!--                    <a class="btn btn-outline-light fw-light fw-bold" href="/">Home</a>-->
-<!--                </div>-->
-<!--                <div id="first-btn">-->
-<!--                    <a class="btn btn-outline-light ms-5 fw-light" href="#projects_link">Projects</a>-->
-<!--                </div>-->
-<!--                <div id="second-btn">-->
-<!--                    <a class="btn btn-outline-light fw-light ms-5" href="#experience_link">Work Experience</a>-->
-<!--                </div>-->
-<!--                <div id="third-btn">-->
-<!--                    <a class="btn btn-outline-light fw-light ms-5" href="/Projects">Resume/About me</a>-->
-<!--                </div>-->
-<!--                <div id="fourth-btn">-->
-<!--                    <a class="btn btn-outline-light fw-light ms-5" href="/Articles">Essays & Articles</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </nav>-->
-    </div>
-    <div id="splash_wrapper" class="mx-auto" style="max-width:1500px; height:75px">
-        <div class="px-3 px-md-4 px-lg-5 mb-5">
-            <div id="splash_title" class="text-white px-3 px-md-4 px-lg-5">
-                <div id="name_wrapper" class="pt-5">
-                    <h1 id="splash_name" class="fw-bolder text-white m-0 mt-auto">Articles</h1><br>
-                </div>
-                <div id="title_wrapper" class="mt-4"><h3><span class="element"></span></h3></div>
-            </div>
-        </div>
-    </div>
+<section id="" class="content mb-5 ms-5" style="">
+    <div class="homepage_title text-primary d-flex"><h3 class="ps-4">Essays & Articles</h3><h3 class="ps-5 ms-4 text-secondary fw-light">Papers and Opinion Pieces Written Throughout My Undergrad</h3></div>
 </section>
 <section class="content">
     <div class="splash_title">
 
     </div>
-    <div class="container">
-        <div th:each="art, artStat: ${articles}" class="d-flex py-5">
-            <div class=" col-2 d-flex justify-content-center align-items-center">
-                <img class="company_logo mx-auto" style="width:75%" th:src="@{/images/{ref}(ref=${art.getArticle_image_str()})}" th:alt="|Image for ${art.getArticle_title()}|">
-            </div>
-            <div class="ps-5 col-md-8 col-lg-6">
-                <p class="fw-bold my-0" th:text="${art.getArticle_title()}"></p>
-                <p class="my-0" th:text="${art.getArticle_subtitle()}"></p>
-                <p class="text-secondary"><b>Related Tags:</b>
-                    <span th:each="tag, tagStat: ${tags}" th:text="${tag.getTag_value()}" class="tag badge rounded-pill bg-dark"></span>
-                </p>
+<!--    <div class="container">-->
+    <div id="previous_experience_wrapper" class="content d-flex align-items-stretch justify-content-center flex-wrap">
+        <div th:each="article, articleStat: ${articles}"  class="work_cube shadow mx-3 my-4 border border-secondary border-1 p-1  align-items-start flex-column">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="logo_wrapper w-100 text-center mb-auto mt-1">
+                        <img class="article_logo mx-auto" style="max-height:200px; max-width: 300px;" th:src="@{/images/{ref}(ref=${article.getArticle_image_str()})}" th:alt="|Article logo for ${article.getArticle_title()}|">
+                    </div>
+                    <br>
+                    <div class="information_wrapper my-0 col-12 pb-5">
+                        <div class="text-center justify-content-center">
+                            <p class="fw-bold text-center my-0" th:text="${article.getArticle_title()}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card-back px-2 d-flex">
+                    <div class="align-self-center p-2 bd-highlight text-center" style="height: 100px">
+                        <span id="subtitle" class="fw-bolder" style="line-height: 0.8;" th:text="${article.getArticle_subtitle()}"></span>
+                        <hr>
+                        <a class="btn btn-outline-dark" th:href="${article.getArticle_Link()}" target="_blank">View Article</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -82,7 +60,8 @@
 
 <script>
     $(function() {
-        $("#button_nav").load("components/reduced_header.html");
+<!--        $("#button_nav").load("components/reduced_header.html");-->
+        $("#header").load("components/navbar_header.html");
         $("#footer").load("components/footer.html");
     });
 </script>

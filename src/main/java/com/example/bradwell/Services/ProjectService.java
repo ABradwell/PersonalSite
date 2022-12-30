@@ -45,7 +45,7 @@ public class ProjectService {
     }
 
     public List<Blurb> getProjectPageContentById(int id) {
-        return blurbService.getAllBlurbsByTypeAndId("PROJECT", id);
+        return blurbService.getAllBlurbsByProjectId(id);
     }
 
 
@@ -59,5 +59,21 @@ public class ProjectService {
             System.out.println("No Projects in Database.");
         }
         return projects;
+    }
+
+    public List<String> getAllScreenshotImagesByProjectId(int project_id) {
+
+        String SQL_CMD = String.format("SELECT image_str FROM project_screenshot WHERE project_id = %d", project_id);
+
+        List<String> image_src_strings = new ArrayList<>();
+        try {
+            image_src_strings = jdbcTemplate.queryForList(SQL_CMD, String.class);
+
+        } catch (Exception e) {
+            System.out.println("No Projects in Database.");
+            image_src_strings = new ArrayList<>();
+        }
+
+        return image_src_strings;
     }
 }

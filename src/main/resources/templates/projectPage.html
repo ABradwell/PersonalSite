@@ -30,6 +30,14 @@
             <span th:each="tag, tagIterStat : ${tags}"  th:text="${tag}" class="tag_btn px-auto mx-1 badge rounded-pill border border-primary text-primary"></span>
         </div>
     </div>
+    <span class="d-none" id="project_id" th:text="${project.getProject_id()}"></span>
+    <div id="image_scroller" class="border-top border-1 border-primary mt-5 py-3 col-12 col-lg-10 col-xlg-8 mx-auto">
+        <div><p class="fw-bold">Screenshot Gallery...</p>
+            <div id="screenshot_carousel_wrapper">
+
+            </div>
+        </div>
+    </div>
 </section>
 <section id="project_body" class="border-top border-dark border-1" style="min-height:700px;">
 
@@ -42,9 +50,10 @@
     </nav>
 <!--    <div data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="0" tabindex="0" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2 col-12 col-md-10 col-lg-7 mx-auto">-->
     <div data-bs-spy="scroll" data-bs-target="#header-nav" data-bs-offset="0" tabindex="0" class="p-3 rounded-2 col-12 col-md-10 col-lg-7 mx-auto bg-light mb-4">
-        <div th:each="blurb, headerStat : ${content}" style="min-height:200px;">
+        <div th:each="blurb, headerStat : ${content}" style="min-height:200px;" class="mt-5">
             <h2 th:id="|spy${blurb.getBlurb_id()}|" th:text="${blurb.getTitle()}"></h2>
-            <p th:text="${blurb.getBlurb_content()}"></p>
+            <p th:utext="${blurb.getBlurb_content()}" th:inline="text">
+            </p>
         </div>
     </div>
 
@@ -57,6 +66,25 @@
     $(function() {
         $("#header").load("components/navbar_header.html");
         $("#footer").load("components/footer.html");
+
+
+        var proj_id = $(this).find("#project_id").text()
+
+        var screenshot_request = new XMLHttpRequest();
+        screenshot_request.open("GET", "/getScreenshotCarousel?proj_id=" + proj_id, true);
+
+        screenshot_request.onload = function() {
+            $("#screenshot_carousel_wrapper").append(screenshot_request.responseText);
+            $("#screenshot_carousel").find(".carousel-item")[0].classList.add("active");
+            $( ".carousel-item" ).first().addClass("active")
+            console.log($( ".carousel-item" ))
+            console.log($( ".carousel-item" ).first())
+        }
+
+
+
+        screenshot_request.send();
+
     });
 </script>
 </html>

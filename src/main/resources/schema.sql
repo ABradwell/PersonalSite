@@ -1,4 +1,17 @@
 
+DROP TABLE IF EXISTS CONTENT_TYPE;
+CREATE TABLE CONTENT_TYPE (
+    content_type_id INT AUTO_INCREMENT PRIMARY KEY,
+    content_type_value VARCHAR
+);
+
+DROP TABLE IF EXISTS BLURB_TYPE;
+CREATE TABLE BLURB_TYPE (
+    blurb_type_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    type_value VARCHAR
+);
+
 DROP TABLE IF EXISTS ARTICLE;
 CREATE TABLE ARTICLE (
 
@@ -9,13 +22,6 @@ CREATE TABLE ARTICLE (
     article_image_str VARCHAR
 );
 
-DROP TABLE IF EXISTS BLURB;
-CREATE TABLE BLURB (
-    blurb_id INT AUTO_INCREMENT PRIMARY KEY,
-
-    title VARCHAR,
-    blurb_content VARCHAR
-);
 
 DROP TABLE IF EXISTS PROJECT;
 CREATE TABLE PROJECT (
@@ -25,6 +31,18 @@ CREATE TABLE PROJECT (
     project_sub_title VARCHAR,
     project_image_str VARCHAR,
     highlighted BOOlEAN
+);
+
+DROP TABLE IF EXISTS BLURB;
+CREATE TABLE BLURB (
+  blurb_id INT AUTO_INCREMENT PRIMARY KEY,
+
+  title VARCHAR,
+  blurb_content VARCHAR,
+  blurb_type_id INT,
+  FOREIGN KEY (blurb_type_id) REFERENCES BLURB_TYPE(blurb_type_id),
+  project_id INT,
+  FOREIGN KEY (project_id) REFERENCES PROJECT(project_id)
 );
 
 DROP TABLE IF EXISTS EMPLOYMENT;
@@ -39,46 +57,48 @@ CREATE TABLE EMPLOYMENT (
   image_src VARCHAR
 );
 
-DROP TABLE IF EXISTS CONTENT_TYPE;
-CREATE TABLE CONTENT_TYPE (
-    content_type_id INT AUTO_INCREMENT PRIMARY KEY,
-    content_type_value VARCHAR
-
+DROP TABLE IF EXISTS PROJECT_TAG;
+CREATE TABLE PROJECT_TAG (
+    project_tag_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_id INT,
+    FOREIGN KEY (project_id) REFERENCES PROJECT(project_id),
+    project_tag_value VARCHAR
 );
 
-DROP TABLE IF EXISTS TAG;
-CREATE TABLE TAG (
-    tag_id INT AUTO_INCREMENT PRIMARY KEY,
-    tag_value VARCHAR
+DROP TABLE IF EXISTS PROJECT_SREENSHOT;
+CREATE TABLE PROJECT_SCREENSHOT (
+  project_screenshot_id INT AUTO_INCREMENT PRIMARY KEY,
+  project_id INT,
+  FOREIGN KEY (project_id) REFERENCES PROJECT(project_id),
+  image_str VARCHAR
 );
 
-DROP TABLE IF EXISTS CONTENT_TAG;
-CREATE TABLE CONTENT_TAG (
-    content_tag_id INT AUTO_INCREMENT PRIMARY KEY,
+--DROP TABLE IF EXISTS TAG;
+--CREATE TABLE TAG (
+--    tag_id INT AUTO_INCREMENT PRIMARY KEY,
+--    tag_value VARCHAR
+--);
 
-    content_type_id INT,
-    FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
-    content_id INT,
-    tag_id INT,
-    FOREIGN KEY (tag_id) REFERENCES TAG(tag_id)
-);
+--DROP TABLE IF EXISTS CONTENT_TAG;
+--CREATE TABLE CONTENT_TAG (
+--    content_tag_id INT AUTO_INCREMENT PRIMARY KEY,
+--
+--    content_type_id INT,
+--    FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
+--    content_id INT,
+--    tag_id INT,
+--    FOREIGN KEY (tag_id) REFERENCES TAG(tag_id)
+--);
 
-DROP TABLE IF EXISTS CONTENT_BLURB;
-CREATE TABLE CONTENT_BLURB (
-    content_blurb_id INT AUTO_INCREMENT PRIMARY KEY,
+--DROP TABLE IF EXISTS CONTENT_BLURB;
+--CREATE TABLE CONTENT_BLURB (
+--    content_blurb_id INT AUTO_INCREMENT PRIMARY KEY,
+--
+--    content_type_id INT,
+--    FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
+--    blurb_id INT,
+--    FOREIGN KEY (blurb_id) REFERENCES BLURB(blurb_id),
+--    project_id INT
+--);
 
-    content_type_id INT,
-    FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
-    blurb_id INT,
-    FOREIGN KEY (blurb_id) REFERENCES BLURB(blurb_id),
-    content_id INT,
-    content_type_id INT,
-    FOREIGN KEY (content_type_id) REFERENCES CONTENT_BLURB_TYPE(content_type_id)
-);
 
-DROP TABLE IF EXISTS BLURB_TYPE;
-CREATE TABLE BLURB_TYPE (
-    content_blurb_type_id INT AUTO_INCREMENT PRIMARY KEY,
-
-    type_value VARCHAR
-);

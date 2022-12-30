@@ -20,7 +20,7 @@ public class TagService {
 
     public List<Tag> getAllTags(){
 
-        String SQL_CMD = "SELECT * FROM tag";
+        String SQL_CMD = "SELECT project_tag_value FROM project_tag";
         List<Tag> tags = null;
         try {
             tags = jdbcTemplate.query(SQL_CMD, new TagRowMapper());
@@ -30,9 +30,9 @@ public class TagService {
         return tags;
     }
 
-    public Tag getTagById(int tag_id) {
+    public Tag getProjectTagById(int tag_id) {
 
-        String SQL_CMD = "GET * FROM tag WHERE tag_id = " + tag_id;
+        String SQL_CMD = "GET project_tag_value FROM project_tag WHERE project_tag_id = " + tag_id;
 
         Tag tag = null;
 
@@ -52,8 +52,7 @@ public class TagService {
         Integer content_type_id = contentService.getContentTypeIdByString("PROJECT");
 
 
-        String SQL_CMD = String.format("SELECT tag_value FROM content_tag INNER JOIN tag ON content_tag.tag_id = tag.tag_id " +
-                "WHERE content_type_id = %d AND content_id = %d", content_type_id, project_id);
+        String SQL_CMD = String.format("SELECT project_tag_value FROM project_tag WHERE project_id = %d", project_id);
         System.out.println(SQL_CMD);
 
         try {
