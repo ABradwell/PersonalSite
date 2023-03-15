@@ -15,15 +15,15 @@ INSERT INTO EMPLOYMENT(company_name, position_title, job_description, location, 
     ('MentorU', 'Website Management', 'Manage website design, updates, and development for a young upstart in the Ottawa area. Used HTML5, CSS, JavaScript', 'Ottawa, Ontario, Canada (VIRTUAL)', 'March 2020', 'Present', 'work_logos/mentor-u-logo-2.png'),
     ('University of Ottawa', 'Regional Mentor', 'Assisted first-year students with their transition into the University of Ottawa community.Abilities Gained:</b> Public speaking, Presentation Development, Interdepartmental Relations', 'Ottawa, Ontario, Canada', 'May 2019', 'April 2020', 'work_logos/uottawa-logo.png');
 
-INSERT INTO PROJECT(project_name , project_sub_title, project_image_str, highlighted) VALUES
-('Python-Tensorflow Number Recognition', 'Neural Network trained to detect consistent-font numbers amongst large dataset complex images.', 'logo/number_recognition_logo.png', TRUE),
-('OpenCV Live Hand-Tracker', 'Live OpenCV-Webcam live hand detection and motion tracking application.', 'logo/hand_tracker_logo.png', FALSE),
-('Live-Feed Image Processor', 'Laptop webcam image processor, allowing user to stack filters to see combined post-proccessing results.', 'logo/video_morph_logo.png', TRUE),
-('Simple Evolution', 'Single cell organisms battle for surival, using their randomly generated qualities to proove whose best!', 'logo/Evolution_logo.png', FALSE),
-('Randomized Map Generation', 'Python-based 8-bit map generation, equipped with a little dog to live on the new land!', 'logo/map_generation_logo.png', FALSE),
-('Automated Snake Game', 'Python3 based implementation using nylon graphics of an automated-snake game', 'logo/snake_game_logo.png', TRUE),
-('Lights Out', 'Java implementation of the classic lights out game.', 'logo/lights_off_logo.png', FALSE),
-('Walk-In Clinic Android App', 'Android studio-created app implementing firebase authentication and login', 'logo/walk_in_clinic_logo.png', FALSE);
+INSERT INTO PROJECT(project_name , project_sub_title, project_image_str, project_github_str, highlighted) VALUES
+('Python-Tensorflow Number Recognition', 'Neural Network trained to detect consistent-font numbers amongst large dataset complex images.', 'logo/number_recognition_logo.png', 'ABradwell/Number_recognition', TRUE),
+('OpenCV Live Hand-Tracker', 'Live OpenCV-Webcam live hand detection and motion tracking application.', 'logo/hand_tracker_logo.png', 'ABradwell/Hand_Tracking', FALSE),
+('Live-Feed Image Processor', 'Laptop webcam image processor, allowing user to stack filters to see combined post-proccessing results.', 'logo/video_morph_logo.png', 'ABradwell/Webcam_OpenCv_morph', TRUE),
+('Simple Evolution', 'Single cell organisms battle for surival, using their randomly generated qualities to proove whose best!', 'logo/Evolution_logo.png', 'ABradwell/SingleCellSurvival', FALSE),
+('Randomized Map Generation', 'Python-based 8-bit map generation, equipped with a little dog to live on the new land!', 'logo/map_generation_logo.png', 'ABradwell/Automated-Creatures', FALSE),
+('Automated Snake Game', 'Python3 based implementation using nylon graphics of an automated-snake game', 'logo/snake_game_logo.png', 'ABradwell/SnakeGame', TRUE),
+('Lights Out', 'Java implementation of the classic lights out game.', 'logo/lights_off_logo.png', 'ABradwell/Portfolio', FALSE),
+('Walk-In Clinic Android App', 'Android studio-created app implementing firebase authentication and login', 'logo/walk_in_clinic_logo.png', 'ABradwell/Pear_Studios', FALSE);
 
 INSERT INTO PROJECT_TAG(project_id, project_tag_value) VALUES
     (1, 'Python'), (1, 'TensorFlow'), (1, 'Computer Vision'), (1, 'OpenCV'),

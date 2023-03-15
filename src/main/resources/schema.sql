@@ -31,6 +31,7 @@ CREATE TABLE PROJECT (
     project_name VARCHAR,
     project_sub_title VARCHAR,
     project_image_str VARCHAR,
+    project_github_str VARCHAR,
     highlighted BOOlEAN
 );
 
