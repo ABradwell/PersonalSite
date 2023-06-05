@@ -75,32 +75,3 @@ CREATE TABLE PROJECT_SCREENSHOT (
   image_str VARCHAR
 );
 
---DROP TABLE IF EXISTS TAG;
---CREATE TABLE TAG (
---    tag_id INT AUTO_INCREMENT PRIMARY KEY,
---    tag_value VARCHAR
---);
-
---DROP TABLE IF EXISTS CONTENT_TAG;
---CREATE TABLE CONTENT_TAG (
---    content_tag_id INT AUTO_INCREMENT PRIMARY KEY,
---
---    content_type_id INT,
---    FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
---    content_id INT,
---    tag_id INT,
---    FOREIGN KEY (tag_id) REFERENCES TAG(tag_id)
---);
-
---DROP TABLE IF EXISTS CONTENT_BLURB;
---CREATE TABLE CONTENT_BLURB (
---    content_blurb_id INT AUTO_INCREMENT PRIMARY KEY,
---
---    content_type_id INT,
---    FOREIGN KEY (content_type_id) REFERENCES CONTENT_TYPE(content_type_id),
---    blurb_id INT,
---    FOREIGN KEY (blurb_id) REFERENCES BLURB(blurb_id),
---    project_id INT
---);
-
-
